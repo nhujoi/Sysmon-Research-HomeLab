@@ -22,7 +22,6 @@ I performed the following steps to simulate the attack:
 **Result:** Instead of opening the calculator normally, the application loaded my local DLL due to the *DLL Search Order* vulnerability.
 
 ![alt text](screenshots/attack_execution.png)
-*(Note: Replace the link above with your actual screenshot showing the folder with calc.exe and the fake DLL)*
 
 ## 4. Log Analysis (Blue Team)
 After the execution, I analyzed **Sysmon Event ID 7 (Image Loaded)** to investigate the behavior.
@@ -35,7 +34,6 @@ After the execution, I analyzed **Sysmon Event ID 7 (Image Loaded)** to investig
 
 **Evidence from Event Viewer:**
 ![alt text](screenshots/event_log_detail.png)
-*(Note: Take a screenshot of the Event Viewer details pane showing the ImageLoaded path)*
 
 ## 5. Detection Strategy & IOCs
 Based on the analysis, here are the Indicators of Compromise (IOCs) and the logic to detect this threat.
