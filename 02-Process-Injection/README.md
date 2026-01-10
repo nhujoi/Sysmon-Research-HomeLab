@@ -24,7 +24,6 @@ I performed the injection using a PowerShell script to inject a base64 encoded p
 **Result:** The target process (`spoolsv.exe`), which is normally an **Unmanaged** (native) application, suddenly transformed into a **Managed** (.NET) application.
 
 ![alt text](screenshots/process_hacker_injection.png)
-*(Note: Screenshot showing the target process highlighted in Green/Managed color in Process Hacker)*
 
 ## 4. Log Analysis (Blue Team)
 Since the attack happens in memory, standard file scanning might miss it. However, **Sysmon Event ID 7 (Image Loaded)** captures the libraries loaded by the process.
@@ -40,7 +39,6 @@ Since the attack happens in memory, standard file scanning might miss it. Howeve
 
 **Evidence from Event Viewer:**
 ![alt text](screenshots/sysmon_clr_load.png)
-*(Note: Screenshot of Event ID 7 showing 'spoolsv.exe' loading 'clr.dll')*
 
 ## 5. Detection Strategy
 To detect this In-Memory attack, we look for "Managed" DLLs loading into "Unmanaged" processes.
