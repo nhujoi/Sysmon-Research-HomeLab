@@ -34,7 +34,7 @@ Mimikatz works by opening a "Handle" to the `lsass.exe` process to read its memo
     * This is the technical signature. `0x1010` corresponds to `PROCESS_QUERY_LIMITED_INFORMATION | PROCESS_VM_READ`. This specific combination of access rights is required to read the memory of another process.
 
 **Evidence from Event Viewer:**
-!![alt text](screenshots/sysmon_lsass_access.png)
+![alt text](screenshots/sysmon_lsass_access.png)
 
 ## 5. Detection Strategy
 Detecting Mimikatz by filename is easy but ineffective (attackers can rename it to `notepad.exe`). A robust detection relies on the **behavior** of accessing LSASS with specific permissions.
