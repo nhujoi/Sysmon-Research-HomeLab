@@ -39,7 +39,3 @@ Through this project, I have gained deep insights into:
 * All attacks were performed in a strictly isolated virtual environment.
 * Malware samples and tools (like Mimikatz) are used solely for educational and defensive research purposes.
 
----
-**Author:** [Tên Của Bạn]
-**University:** Ho Chi Minh City University of Technology (HCMUT)
-**Contact:** [Link LinkedIn của bạn] | [Email của bạn]
