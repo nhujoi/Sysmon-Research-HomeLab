@@ -28,12 +28,14 @@ This lab is divided into specific attack scenarios. Click on each module for det
 | **[01. DLL Hijacking](./01-DLL-Hijacking)** | Hijack Execution Flow | [T1574.002](https://attack.mitre.org/techniques/T1574/002/) | Detected unsigned module loading & path anomalies (Event ID 7). |
 | **[02. Process Injection](./02-Process-Injection)** | Process Injection | [T1055](https://attack.mitre.org/techniques/T1055/) | Identified `.NET/CLR` loading into unmanaged processes like `spoolsv.exe`. |
 | **[03. Credential Dumping](./03-Credential-Dumping)** | OS Credential Dumping | [T1003.001](https://attack.mitre.org/techniques/T1003/001/) | Detected `lsass.exe` memory access with `0x1010` rights (Event ID 10). |
+| **[04. Advanced ETW Hunting](./04-Advanced-ETW-Hunting)** | Parent PID Spoofing & BYOL | [T1134.004](https://attack.mitre.org/techniques/T1134/004/) | Used **SilkETW** to expose spoofed parent processes and identify .NET Assembly names (e.g., `Seatbelt`) in memory. |
 
 ## 🚀 Key Takeaways
 Through this project, I have gained deep insights into:
 * **Windows Internals:** Understanding PE structure, DLL search order, and Memory management (Managed vs. Unmanaged code).
 * **Log Analysis:** Proficiency in filtering and interpreting Sysmon Event IDs (1, 7, 10, etc.).
 * **Threat Hunting:** Moving from reactive monitoring to proactive hunting by looking for anomalies in process lineage and access rights.
+* **Advanced Telemetry (ETW):** Learned that user-mode logs (Sysmon) can be spoofed. Validated "Ground Truth" data using Kernel-level tracing to detect sophisticated evasion techniques (Parent PID Spoofing).
 
 ## ⚠️ Disclaimer
 * All attacks were performed in a strictly isolated virtual environment.
